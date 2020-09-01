@@ -1,65 +1,56 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import fetch from "node-fetch";
 
-export default function Home() {
+import Header from "../components/Header";
+import Spacer from "../components/Spacer";
+import Stories from "../components/Stories";
+import { Posts } from "../components/Post/Post";
+import styles from "../styles/Home.module.css";
+
+const Sidebar = () => {
+  return <div className="wrapper">Sidebar</div>;
+};
+export default function Home(props) {
+  console.log("props are ", props);
+  const { posts, people } = props;
   return (
-    <div className={styles.container}>
+    <div className={styles.page}>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Instagram by bigyan</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      <Header />
+      <main>
+        <div style={{ padding: "20px" }}>
+          <div className="wrapper">
+            <div style={{ padding: "0 20px" }}>
+              <Stories {...{ people }} />
+              <Spacer space={10} />
+              <Posts {...{ posts, people }} />
+            </div>
+            {/* <div style={{ flex: 1, padding: "0 20px" }}>
+              <Sidebar />
+            </div> */}
+          </div>
         </div>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
     </div>
-  )
+  );
+}
+
+export async function getStaticProps(context) {
+  let posts = [];
+  let people = [];
+  const urlBase = "https://pixabay.com/api/?key=9830712-3e3ca065b544e613e5f68cb6d";
+  try {
+    posts = await (await fetch(`${urlBase}&q=landscape,fruits&image_type=photo`)).json();
+    people = await (await fetch(`${urlBase}&q=faces&image_type=photo`)).json();
+    posts = posts.hits;
+    people = people.hits;
+  } catch (error) {
+    console.log(error);
+  }
+  return {
+    props: { posts, people },
+  };
 }

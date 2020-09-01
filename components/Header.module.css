@@ -1,0 +1,70 @@
+.container {
+  border-bottom: 1px solid rgb(219, 219, 219);
+}
+.innerContainer {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+.logoContainer {
+  flex: 1;
+  display: flex;
+  justify-self: start;
+  /* align-items: center; */
+}
+.logoContainer img {
+  height: 30px;
+}
+.searchContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.searchContainer {
+  background-color: #fafafa;
+  border: 1px solid #dbdbdb;
+  border-radius: 2px;
+  color: #8e8e8e;
+  width: 100%;
+  max-width: 50vw;
+  padding: 5px;
+  position: relative;
+}
+.searchContainer .searchContainerButton {
+  display: flex;
+  width: 100%;
+  padding: 2px;
+  justify-content: center;
+  align-items: center;
+}
+.searchContainer .searchContainerButton .searchButtonText {
+  padding-left: 4px;
+}
+.searchContainer .searchIcon {
+}
+.searchContainer button,
+.searchContainer input {
+  color: #8e8e8e;
+  border: none;
+  flex: 1;
+  background-color: #fafafa;
+}
+.searchContainer input {
+  font-size: 15px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.headerActionsContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.headerAction {
+  padding: 0 5px;
+  margin: 0 5px;
+  /* background-color: red; */
+}

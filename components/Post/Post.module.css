@@ -1,0 +1,99 @@
+.postContainer {
+  border: 1px solid #eee;
+  flex: 1;
+  margin: 10px 0;
+  border-radius: 3px;
+}
+.postHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+.postUserDetails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.userImageContainer {
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  width: 25px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.userImageContainer img {
+  display: flex;
+  flex: 1;
+}
+.userName {
+  padding: 0 5px 0 15px;
+  color: #262626;
+  font-weight: 600;
+  line-height: 18px;
+  font-size: 14px;
+}
+.postActions {
+  display: flex;
+  padding: 5px 10px;
+  justify-content: space-between;
+  flex: 1;
+}
+.postAction {
+  padding: 5px;
+  margin: 0 2px;
+}
+.heartAction {
+  padding-left: 0;
+}
+.postActionsLeft {
+  display: flex;
+}
+.postActionsMiddle {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+.postActionsRight {
+  display: flex;
+}
+.likedByContainer {
+  padding: 0 10px;
+  display: flex;
+  flex: 1;
+}
+.likes {
+  color: #262626;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 600;
+
+  padding: 0 10px;
+  font-weight: 6;
+}
+.timeAgo {
+  color: #555;
+  padding: 0 10px;
+  font-size: 10px;
+  line-height: 17px;
+  color: rgb(142, 142, 142);
+}
+.addCommentContainer {
+  padding: 10px;
+  margin-top: 10px;
+  border-top: 1px solid #efefef;
+
+  display: flex;
+}
+.addCommentContainer input {
+  display: flex;
+  width: 100%;
+  border: none;
+  padding: 5px;
+  align-self: stretch;
+}
+.addCommentContainer input::placeholder {
+  color: #8e8e8e;
+}
