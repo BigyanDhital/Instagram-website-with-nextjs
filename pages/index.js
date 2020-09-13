@@ -4,12 +4,10 @@ import fetch from "node-fetch";
 import Header from "../components/Header";
 import Spacer from "../components/Spacer";
 import Stories from "../components/Stories";
+import Sidebar from "../components/Sidebar";
 import { Posts } from "../components/Post/Post";
 import styles from "../styles/Home.module.css";
 
-const Sidebar = () => {
-  return <div className="wrapper">Sidebar</div>;
-};
 export default function Home(props) {
   console.log("props are ", props);
   const { posts, people } = props;
@@ -23,14 +21,16 @@ export default function Home(props) {
       <main>
         <div style={{ padding: "20px" }}>
           <div className="wrapper">
-            <div style={{ padding: "0 20px" }}>
-              <Stories {...{ people }} />
-              <Spacer space={10} />
-              <Posts {...{ posts, people }} />
+            <div className="columns">
+              <div className="column is-two-thirds">
+                <Stories {...{ people }} />
+                <Spacer space={10} />
+                <Posts {...{ posts, people }} />
+              </div>
+              <div className="column" style={{ flex: 1, padding: "0 20px" }}>
+                <Sidebar user={people[0]} />
+              </div>
             </div>
-            {/* <div style={{ flex: 1, padding: "0 20px" }}>
-              <Sidebar />
-            </div> */}
           </div>
         </div>
       </main>

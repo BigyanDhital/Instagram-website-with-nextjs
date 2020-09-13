@@ -1,0 +1,55 @@
+.suggestionsForYou {
+  font-size: 14px;
+  line-height: 18px;
+  color: #8e8e8e;
+  font-weight: 600;
+}
+.seeAll {
+  text-align: right;
+  font-size: 12px;
+  line-height: 13px;
+  color: #262626;
+  font-weight: 600;
+}
+.suggestionContainer {
+  display: flex;
+  margin: 15px 0;
+}
+.imageContainer {
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.imageContainer img {
+  display: flex;
+  object-fit: cover;
+  flex: 1;
+}
+.userDetails {
+  padding: 0 10px;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+.userName {
+  font-size: 14px;
+  line-height: 18px;
+  color: #262626;
+  font-weight: 600;
+}
+.tag {
+  font-size: 12px;
+  line-height: 14px;
+  color: #8e8e8e;
+}
+.followButton {
+  background: none;
+  border: none;
+  font-size: 12px;
+  line-height: 14px;
+  color: #0095f6;
+  font-weight: 600;
+}
