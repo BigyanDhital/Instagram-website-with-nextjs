@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Spacer from "../components/Spacer";
 import Stories from "../components/Stories";
 import Sidebar from "../components/Sidebar";
+import InfoBar from "../components/InfoBar";
 import { Posts } from "../components/Post/Post";
 import styles from "../styles/Home.module.css";
 
@@ -23,6 +24,9 @@ export default function Home(props) {
           <div className="wrapper">
             <div className="columns">
               <div className="column is-two-thirds">
+                <div style={{ margin: "10px 0" }}>
+                  <InfoBar text="This is a work in progress. Keep coming back!" />
+                </div>
                 <Stories {...{ people }} />
                 <Spacer space={10} />
                 <Posts {...{ posts, people }} />

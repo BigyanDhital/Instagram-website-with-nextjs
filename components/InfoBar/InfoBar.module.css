@@ -1,0 +1,9 @@
+.container {
+  background-color: #edf6fb;
+  border-left: 2px solid #3298db;
+  border-radius: 0 3px 3px 0;
+}
+.container p {
+  color: #3298db;
+  padding: 10px;
+}
